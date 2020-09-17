@@ -26,7 +26,7 @@ body {
   }
   
   .main {
-    flex: 1 100%;
+    flex: 4;
     min-height: 60vh;
   }
 
@@ -40,14 +40,7 @@ body {
     flex: 1 0 0;
   }
   
-  @media all and (min-width: 600px) {
-    .aside { flex: 1 0 0; }
+  @media screen and (max-device-width: 480px) {
+    .main    {  flex: 1 100%;}
   }
-  @media all and (min-width: 800px) {
-    .main    { flex: 4 0px; }
-    .aside   { order: 2; }   
-    .main    { order: 1; }
-    .footer  { order: 3; }
-  }
-  
   
