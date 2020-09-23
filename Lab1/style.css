@@ -41,6 +41,7 @@ body {
   }
   
   @media screen and (max-device-width: 480px) {
-    .main    {  flex: 1 100%;}
+    body { flex-direction: column; }
+    .content { flex-direction: column; }
   }
   
