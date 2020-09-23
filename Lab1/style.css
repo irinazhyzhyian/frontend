@@ -9,7 +9,7 @@ body {
 
 .content{
   order: 2;
-  min-height: 100vh;
+  /*.min-height: 100vh;*/
   flex: 5 0 0;
   display: flex;
   flex-flow: row wrap;
@@ -27,7 +27,7 @@ body {
   
   .main {
     flex: 4;
-    min-height: 60vh;
+    /*min-height: 60vh;*/
   }
 
   .nav {
