@@ -17,12 +17,12 @@ body {
 
   .header {
     background: rgb(218, 126, 218);
-    flex: 1 100%;
+    flex: 1 100vw;
   }
   
   .footer {
     background: darkmagenta;
-    flex: 1 100%;
+    flex: 1 100vw;
   }
   
   .main {
@@ -41,7 +41,8 @@ body {
   }
   
   @media screen and (max-device-width: 480px) {
-    body { flex-direction: column; }
-    .content { flex-direction: column; }
+    /*body { flex-direction: column; }
+    .content { flex-direction: column; }*/
+    .aside { flex: 1 100vw; }
   }
   
