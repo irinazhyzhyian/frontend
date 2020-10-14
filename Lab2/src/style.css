@@ -1,0 +1,34 @@
+.post{
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	padding: 20px;
+	width: 70vw;
+	margin: 0 auto;
+}
+.deleteBtn{
+	margin-left: 98%;
+}
+
+.inputForm{
+	padding: 30px;
+	width: 60vw;
+	margin: 0 auto;
+	display: flex;
+
+}
+
+.center{
+	margin: 0 auto;
+}
+
+input[type=text]{
+	padding: 5px;
+	margin: 4px;
+	height: 1.5em;
+}
+
+textarea{
+	margin: 4px;
+	height: 2em;
+}
