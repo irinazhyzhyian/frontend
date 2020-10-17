@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Post from './Post';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+let postList = [];
+
+window.onload = () => {
+    document.getElementById('submitBtn').onclick = handleSubmit;
+    document.getElementById('title').oninput = handleChange;
+    document.getElementById('text').oninput = handleChange;
 }
 
-export default App;
+function isValid(title, text) {
+    return text.length == 0 || title.length == 0;
+}
+
+export function handleDelete(id) {
+    const delDiv = document.getElementById(id);
+    postList = postList.filter(p => p.id !== id);
+    delDiv.remove();
+}
+
+function handleChange() {
+    const text = document.getElementById('text').value;
+    const title = document.getElementById('title').value;
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = isValid(text, title);
+}
+
+function handleSubmit(e) {
+    e.preventDefault();
+
+    const title = document.getElementById('title').value;
+    const text = document.getElementById('text').value;
+    const date = new Date().toLocaleDateString();
+
+    const post = new Post(title, text, date);
+    postList.push(post);
+    post.show();
+    post.send();
+}
