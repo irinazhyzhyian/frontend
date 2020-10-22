@@ -8,24 +8,6 @@ window.onload = () => {
     document.getElementById('text').oninput = handleChange;
 }
 
-function isValid(title, text) {
-    return text.length == 0 || title.length == 0;
-}
-
-export function handleDelete(id) {
-    const delDiv = document.getElementById(id);
-    postList = postList.filter(p => p.id !== id);
-    delDiv.remove();
-}
-
-function handleChange() {
-    const text = document.getElementById('text').value;
-    const title = document.getElementById('title').value;
-
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.disabled = isValid(text, title);
-}
-
 function handleSubmit(e) {
     e.preventDefault();
 
@@ -38,3 +20,22 @@ function handleSubmit(e) {
     post.show();
     post.send();
 }
+
+function isValid(title, text) {
+    return text.length == 0 || title.length == 0;
+}
+
+function handleChange() {
+    const text = document.getElementById('text').value;
+    const title = document.getElementById('title').value;
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = isValid(text, title);
+}
+
+export function handleDelete(id) {
+    const delDiv = document.getElementById(id);
+    postList = postList.filter(p => p.id !== id);
+    delDiv.remove();
+}
+
